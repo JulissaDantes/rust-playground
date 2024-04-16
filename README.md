@@ -18,3 +18,6 @@ To run a program using `rustc`:
 
 To run a program using `cargo`:
 `cargo run`
+
+To run a program using `cargo` in release mode(faster):
+`cargo run --release`
