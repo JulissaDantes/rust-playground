@@ -21,3 +21,6 @@ To run a program using `cargo`:
 
 To run a program using `cargo` in release mode(faster):
 `cargo run --release`
+
+To create a new rust project:
+`cargo new <name of project>`
