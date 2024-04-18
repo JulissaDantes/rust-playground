@@ -1,4 +1,5 @@
 
+use playground::greet;
 const SCREAMING_SNAKE_CASE: f64 = 0.2;
 fn main() {
     let mut bunnies: i32 = 2;
@@ -17,7 +18,16 @@ fn main() {
     let ready = 2;
     println!("Firing {} of my {} news...", ready, news);
     let res = do_stuff(1.0, 2.0);
-    println!("{}", res)
+    println!("{}", res);
+
+   // playground::greet(); if not using use
+   greet();
+   let res = playground::loops(x, y);
+   println!("RES {}", res);
+
+   let a = 1;
+   let b = a.clone();
+   println!("{} {}", a, b)
 }
 
 //lowercase separated by _

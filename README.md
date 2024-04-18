@@ -12,6 +12,8 @@ A package is a bundle of one or more crates that provides a set of functionality
 
 A package can contain as many binary crates as you like, but at most only one library crate. A package must contain at least one crate, whether that’s a library or binary crate. A package can have multiple binary crates by placing files in the src/bin directory: each file will be a separate binary crate.
 
+Rust closures are what lambdas are in c#, a closure might be v.iter.map(|x| x * 3) this will multiply each element by 3
+
 ## Commands
 To run a program using `rustc`:
 `rustc <file to run>`
