@@ -29,9 +29,9 @@ fn main() {
    let a = 1;
    let b = a.clone();
    println!("{} {}", a, b);
-
-   let w = words::get_words(Some('a'), Some(&['t','r']));
-   println!("{} {}", w.len(), w[56]);
+   let square:[[char;3]; 4] = [['e','a','p'],['h','d','t'],['i','w','l'],['y','c','o']];
+   let w = words::get_words(None, Some(&square.concat()), square);
+   println!("{} {}", w.len(), w[5]);//{:?} for the contents
 }
 
 //lowercase separated by _

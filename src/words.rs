@@ -4,10 +4,17 @@ use std::char;
 /// Constrains: Must use as many letters as possible, must not use letters that are in the same side
 /// Extra: Can specify initial letter and which letters would like to include
 /// 
-pub fn get_words(start: Option<char>, included: Option<&[char]>) -> Vec<String> {
+pub fn get_words(start: Option<char>, included: Option<&[char]>, square:[[char;3]; 4]) -> Vec<String> {
     let dict = dictionary2::DICTIONARY;
     let mut res: Vec<String> = dict.iter().map(|&s| s.to_owned()).collect();
-
+    println!("now we have {}", res.len());//{:?} for the contents
+    //remove words with less than 3 letters
+    res = res
+    .iter()
+    .filter(|w| w.len() > 2)
+    .cloned()
+    .collect();
+println!("now we start {}", res.len());//{:?} for the contents
     if let Some(start_char) = start {
         // Filter words that start with the specified character
         res = res
@@ -16,15 +23,46 @@ pub fn get_words(start: Option<char>, included: Option<&[char]>) -> Vec<String> 
             .cloned()
             .collect();
     }
-    
+    println!("now we filter {}", res.len());//{:?} for the contents
     if included.is_some() {
         // Filter words that contain the specified character
         res = res
             .iter()
-            .filter(|w| w.contains(included.unwrap()))
+            .filter(|w| has_valid_letters(w, included.unwrap()))
             .cloned()
             .collect();
     }
-
+    println!("now filter have {}", res.len());//{:?} for the contents
+    // Make sure letters on the same side are not adjacent
+    for side in square {
+        res = res
+            .iter()
+            .filter(|w| !has_adjacent_letters(w, &side))
+            .cloned()
+            .collect();
+    }
+    println!("now we send {}", res.len());//{:?} for the contents
     res
+}
+
+fn has_adjacent_letters(word: &str, letters: &[char; 3]) -> bool {
+    // Iterate through the characters of the word
+    for (i, c) in word.chars().enumerate().take(word.len() - 1) {
+        // Check if the pair of adjacent characters exists in the letters array
+        if letters.contains(&c) && letters.contains(&word.chars().nth(i + 1).unwrap()) {
+            return true; // Found a pair of adjacent letters from the array
+        }
+    }
+    false // No pair of adjacent letters found
+}
+
+fn has_valid_letters(word: &str, letters: &[char]) -> bool {
+    // Iterate through the characters of the word
+    for (_i, c) in word.chars().enumerate().take(word.len()) {
+        // check if a char is not in the array
+        if !letters.contains(&c) {
+            return false; // Found letter not included in the square
+        }
+    }
+    true // All letters are in the square
 }
