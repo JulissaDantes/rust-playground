@@ -1,5 +1,6 @@
 
 use playground::greet;
+use playground::words;
 const SCREAMING_SNAKE_CASE: f64 = 0.2;
 fn main() {
     let mut bunnies: i32 = 2;
@@ -27,7 +28,10 @@ fn main() {
 
    let a = 1;
    let b = a.clone();
-   println!("{} {}", a, b)
+   println!("{} {}", a, b);
+
+   let w = words::get_words(Some('a'), Some(&['t','r']));
+   println!("{} {}", w.len(), w[56]);
 }
 
 //lowercase separated by _

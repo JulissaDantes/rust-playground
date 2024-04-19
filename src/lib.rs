@@ -1,3 +1,5 @@
+pub mod words;
+
 pub fn greet() {
     println!("Hi")
 }
