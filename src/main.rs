@@ -30,8 +30,8 @@ fn main() {
    let b = a.clone();
    println!("{} {}", a, b);
    let square:[[char;3]; 4] = [['e','a','p'],['h','d','t'],['i','w','l'],['y','c','o']];
-   let w = words::get_words(None, Some(&square.concat()), square);
-   println!("{} {}", w.len(), w[5]);//{:?} for the contents
+   let w = words::get_words(Some('t'), Some(&square.concat()), square);
+   println!("{} {:?}", w.len(), &w[0..]);//{:?} for the contents
 }
 
 //lowercase separated by _

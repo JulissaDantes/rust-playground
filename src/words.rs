@@ -7,14 +7,14 @@ use std::char;
 pub fn get_words(start: Option<char>, included: Option<&[char]>, square:[[char;3]; 4]) -> Vec<String> {
     let dict = dictionary2::DICTIONARY;
     let mut res: Vec<String> = dict.iter().map(|&s| s.to_owned()).collect();
-    println!("now we have {}", res.len());//{:?} for the contents
+
     //remove words with less than 3 letters
     res = res
     .iter()
     .filter(|w| w.len() > 2)
     .cloned()
     .collect();
-println!("now we start {}", res.len());//{:?} for the contents
+
     if let Some(start_char) = start {
         // Filter words that start with the specified character
         res = res
@@ -23,7 +23,7 @@ println!("now we start {}", res.len());//{:?} for the contents
             .cloned()
             .collect();
     }
-    println!("now we filter {}", res.len());//{:?} for the contents
+
     if included.is_some() {
         // Filter words that contain the specified character
         res = res
@@ -32,7 +32,7 @@ println!("now we start {}", res.len());//{:?} for the contents
             .cloned()
             .collect();
     }
-    println!("now filter have {}", res.len());//{:?} for the contents
+
     // Make sure letters on the same side are not adjacent
     for side in square {
         res = res
@@ -41,7 +41,7 @@ println!("now we start {}", res.len());//{:?} for the contents
             .cloned()
             .collect();
     }
-    println!("now we send {}", res.len());//{:?} for the contents
+
     res
 }
 
