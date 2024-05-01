@@ -29,7 +29,7 @@ fn main() {
    let a = 1;
    let b = a.clone();
    println!("{} {}", a, b);
-   let square:[[char;3]; 4] = [['d','e','w'],['v','s','b'],['u','n','t'],['l','i','o']];
+   let square:[[char;3]; 4] = [['d','e','w'],['t','s','b'],['a','n','t'],['l','i','o']];
    let w = words::get_words(Some('t'), Some(&square.concat()), square);
    println!("{} {:?}", w.len(), &w[0..]);//{:?} for the contents
 }
