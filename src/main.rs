@@ -1,8 +1,11 @@
 
+use goose::prelude::*;
 use playground::greet;
 use playground::words;
+use goose_eggs::{validate_and_load_static_assets, Validate};
 const SCREAMING_SNAKE_CASE: f64 = 0.2;
-fn main() {
+#[tokio::main]
+async fn main() -> Result<(), GooseError>{
     let mut bunnies: i32 = 2;
     println!("initial bunnies, world! {}", bunnies);
     let (x, y) = (8, 50);
@@ -38,4 +41,10 @@ fn main() {
 fn do_stuff(qty: f64, oz: f64) -> f64 {
     println!("{} {}", qty, oz);
     qty * oz
+}
+
+async fn loadtest_index(user: &mut GooseUser) -> TransactionResult {
+    let _goose_metrics = user.get("").await?;
+
+    Ok(())
 }

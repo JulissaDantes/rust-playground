@@ -6,3 +6,6 @@ edition = "2021"
 [dependencies]
 rand = "0.6.5"
 dictionary2 = "1.0.1"
+goose = "^0.17"
+tokio = "^1.12"
+goose-eggs = "0.4"
