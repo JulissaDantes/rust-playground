@@ -1,7 +1,7 @@
 pub mod words;
 
 pub fn greet() {
-    println!("Hi")
+    println!("Hi there")
 }
 
 pub fn loops(x: i32, y:i32) -> i32 {
