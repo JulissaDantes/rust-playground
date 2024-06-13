@@ -1,5 +1,5 @@
 # rust-playground
-This is where I try things using rust.
+This is where I try PoCs using rust.
 
 ## Things to remember from the Rust book
 A crate can come in one of two forms: a binary crate or a library crate. Binary crates are programs you can compile to an executable that you can run, such as a command-line program or a server. Each must have a function called main that defines what happens when the executable runs. All the crates we’ve created so far have been binary crates.
