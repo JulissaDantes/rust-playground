@@ -2,7 +2,6 @@
 use std::error::Error;
 
 //use goose::prelude::*;
-use playground::greet;
 use playground::words;
 const SCREAMING_SNAKE_CASE: f64 = 0.2;
 //#[tokio::main]
@@ -25,16 +24,14 @@ fn main() {
     let res = do_stuff(1.0, 2.0);
     println!("{}", res);
 
-   // playground::greet(); if not using use
-   greet();
    let res = playground::loops(x, y);
    println!("RES {}", res);
 
    let a = 1;
    let b = a.clone();
    println!("{} {}", a, b);
-   let square:[[char;3]; 4] = [['d','e','w'],['t','s','b'],['a','n','t'],['l','i','o']];
-   let w = words::get_words(Some('t'), Some(&square.concat()), square);
+   let square:[[char;3]; 4] = [['w','r','i'],['d','t','h'],['o','f','s'],['a','n','b']];
+   let w = words::get_words(None, Some(&square.concat())/*Some(&['a','b','c','p'])*/, square);
    println!("{} {:?}", w.len(), &w[0..]);//{:?} for the contents
 }
 
