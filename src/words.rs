@@ -3,7 +3,7 @@ use std::char;
 /// Function to solve the ny times letter box daily game.
 /// Constrains: Must use as many letters as possible, must not use letters that are in the same side
 /// Extra: Can specify initial letter and which letters would like to include
-/// 
+/// TODO separate by word length so its easier to get longer tops
 pub fn get_words(start: Option<char>, included: Option<&[char]>, square:[[char;3]; 4]) -> Vec<String> {
     let dict = dictionary2::DICTIONARY;
     let mut res: Vec<String> = dict.iter().map(|&s| s.to_owned()).collect();
