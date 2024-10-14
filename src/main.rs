@@ -31,7 +31,7 @@ fn main() {
    let b = a.clone();
    println!("{} {}", a, b);
    let square:[[char;3]; 4] = [['i','k','r'],['p','e','w'],['t','o','l'],['m','n','c']];
-   let mut w = words::get_words(None, Some(&square.concat()), square);
+   let mut w = words::get_words(Some('e'), Some(&square.concat()), square);
    sort_words(&mut w);
    print_grouped_words(&w);
   // println!("{} {:?}", w.len(), &w[0..]);//{:?} for the contents
