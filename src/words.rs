@@ -8,7 +8,7 @@ use std::char;
 pub fn get_words(start: Option<char>, included: Option<&[char]>, square:[[char;3]; 4]) -> Vec<String> {
     let dict = dictionary2::DICTIONARY;
     let mut res: Vec<String> = dict.iter().map(|&s| s.to_owned()).collect();
-    let invalid_words = vec!["lowp".to_string(),"enlinkment".to_string(), "receiptment".to_string(), "enrockment".to_string(), "kemptken".to_string(), "recompilement".to_string(), "temporopontine".to_string(), "kleinite".to_string(), "klicket".to_string(), "knopite".to_string(), "ketipic".to_string(), "knickpoint".to_string()];
+    let invalid_words = vec!["lowp".to_string(),"srinivas".to_string(),"jayant".to_string(),"enlinkment".to_string(),"suji".to_string(),"saj".to_string(), "receiptment".to_string(), "enrockment".to_string(), "kemptken".to_string(), "recompilement".to_string(), "temporopontine".to_string(), "kleinite".to_string(), "klicket".to_string(), "knopite".to_string(),"inqilab".to_string(), "ketipic".to_string(), "knickpoint".to_string(), "unantiquity".to_string(), "yariyari".to_string(), "solvabling".to_string(),"yanquis".to_string()];
     //remove words with less than 3 letters
     res = res
     .iter()

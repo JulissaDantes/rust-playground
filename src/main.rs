@@ -30,8 +30,8 @@ fn main() {
    let a = 1;
    let b = a.clone();
    println!("{} {}", a, b);
-   let square:[[char;3]; 4] = [['i','k','r'],['p','e','w'],['t','o','l'],['m','n','c']];
-   let mut w = words::get_words(Some('e'), Some(&square.concat()), square);
+   let square:[[char;3]; 4] = [['s','i','b'],['b','q','v'],['g','r','l'],['n','a','o']];
+   let mut w = words::get_words(Some('g'), Some(&square.concat()), square);
    sort_words(&mut w);
    print_grouped_words(&w);
   // println!("{} {:?}", w.len(), &w[0..]);//{:?} for the contents
