@@ -14,6 +14,8 @@ A package can contain as many binary crates as you like, but at most only one li
 
 Rust closures are what lambdas are in c#, a closure might be v.iter.map(|x| x * 3) this will multiply each element by 3
 
+TODO add bootcamp notes
+
 ## Commands
 To run a program using `rustc`:
 `rustc <file to run>`
